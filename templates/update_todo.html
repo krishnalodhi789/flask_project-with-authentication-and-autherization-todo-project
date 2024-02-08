@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row shadow py-3">
+            <h1 class="display-2 text-center fw-semibold  text-secondary">Flask Project 2</h1>
+            <p class="text-center mb-1 fw-semibold text-danger">" ( With Authentication & Autherization ) "</p>
+            <p class="text-center mb-1 fw-semibold text-danger">" ( Todo List Project ) "</p>
+        </div>
+        <div class="row p-4 border border-bootom">
+            <div class="d-flex px-5">
+                <p class="fs-5 mb-0">Wellcome : "<strong> {{user.fullname}}</strong>" </strong></p>
+                <a href="/logout" class="ms-auto"><button class="btn btn-outline-danger fw-semibold fs-5 px-5 py-1"> Logout <i class="bi bi-box-arrow-right"></i> </button></a>
+            </div>
+        </div>
+    </div>
+    <div class="row py-5">
+        <div class="col-6  mx-auto">
+            <div class="border">
+                <h3 class="text-center  border-bottom p-4">UPDATE YOUR TODO</h3>
+                <div class="p-4 text-center">
+                    <form method="post">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control fw-semibold text-secondary pt-4" id="floatingInput" value="{{todo.title}}" placeholder="Todo Title" name="title" required>
+                            <label for="floatingInput" class="fw-normal text-secondary pb-3"><i class="bi bi-bookmark"></i> Todo Title</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control fw-semibold text-secondary" placeholder="Leave a comment here" id="floatingTextarea" name="description" rows="100" style="height: 100px" required>{{todo.description}}</textarea>
+                            <label for="floatingTextarea" class='fw-semibold text-secondary'>Tode Description</label>
+                        </div>
+                        <div class="d-flex mt-4">
+                            <a href="/"><button type="button" class="btn btn-outline-danger px-4 py-2 fw-semibold fs-5">Cancel</button></a>
+                            <button type="submit" class="btn btn-outline-success ms-auto px-4 py-2 fw-semibold fs-5">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </body>
+  </html>
